@@ -46,7 +46,7 @@ jobs:
 
       - name: Run checks
         run: |
-          make ci
+          echo "Running checks ..."
 
       - name: Build
         env:
@@ -54,8 +54,7 @@ jobs:
           DOCKER_TOKEN: ${{ secrets.DOCKERHUB_TOKEN }}
           USERNAME: 1gtm
         run: |
-          docker login --username ${USERNAME} --password ${DOCKER_TOKEN}
-          make push
+          echo "Building ..."
 
   kubernetes:
     name: Kubernetes
